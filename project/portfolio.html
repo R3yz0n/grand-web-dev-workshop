@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+        body{
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        section{
+            padding: 4px 80px;
+        }
+
+        nav{
+           border: 1px solid blue; 
+           display: flex;
+           justify-content: space-between;
+        }
+
+
+        nav  ul {
+            list-style-type: none;
+            display:flex;
+            gap: 30px;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        nav ul a {
+            color: black;
+            text-decoration: none;
+        }
+
+        nav ul a:hover{
+            color: dodgerblue;
+            text-decoration: underline;
+            text-underline-offset: 9px;
+            transition: ease-in 0.2s;
+        }
+
+        main{
+            border: 1px solid rgb(219, 142, 219);
+            background-color: rgb(246, 249, 251);
+            display: flex;
+            justify-content: space-between;
+            padding: 65px 0;
+        }
+
+        main h2 {
+          font-size: 2.5rem;
+          line-height: 55px;
+          color: darkblue;
+        }
+
+        main h2 span{
+          color: rgba(248, 166, 13, 0.996);
+        }
+
+        main p{
+          font-size: 1.2rem;
+          font-weight: 600;
+        }
+
+        #about{
+          background-color: dodgerblue;
+          color: white;
+          padding: 12px 32px;
+          border: none;
+          border-radius: 18px;
+          font-size: 1rem;
+          cursor: pointer;
+          margin: 10px;
+          box-shadow: -1px 1px 15px  blue;
+      }
+
+      #about:hover{
+        background-color: darkblue;
+      }
+
+
+
+        main img{
+          border-radius: 50%;
+          margin-right: 40px;
+        }
+
+    </style>
+
+  </head>
+
+  <body>
+    <section>
+      <nav>
+        <div>
+          <h2>John</h2>
+        </div>
+        <div>
+          <ul>
+            <li> <a href="#"> Home </a> </li>
+            <li><a href="#"> About </a> </li>
+            <li><a href="#"> Skills </a></li>
+            <li><a href="#"> Education </a></li>
+            <li> <a href="#"> Work </li></a> 
+            <li><a href="#"> Experience </a></li>
+            <li><a href="#"> Contact </a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <main>
+        <!-- About  -->
+        <div title="left side">
+          <h2>Hi there, <br> i am <span>John Doe!</span></h2>
+          <p>I am into web development.</p>
+
+          <button id="about">About Me</button>
+
+          <div>
+            <button>Btn1</button>
+            <button>Btn2</button>
+            <button>Btn3</button>
+            <button>Btn4</button>
+            <button>Btn5</button>
+          </div>
+
+        </div>
+
+        <!-- Image -->
+        <div>
+            <img src="https://pics.craiyon.com/2023-08-05/49f1011262b54a908c8d49495b9efdbd.webp" 
+            alt="pp"
+             height="325px"
+             width="325px"
+             >
+        </div>
+
+      </main>
+    </section>
+  </body>
+</html>
