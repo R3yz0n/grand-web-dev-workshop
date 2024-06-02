@@ -2,6 +2,8 @@ const express = require("express");
 const mongoose = require("mongoose");
 
 const app = express();
+app.use(express.json());
+app.use(express.urlencoded({extended : true}))
 
 app.set("view engine", "ejs");
 
@@ -14,9 +16,9 @@ mongoose.connect(MONGODB_URI).then(()=> {
     console.log("Connect vayena...", err);
 })
 
-
+// app.use(bodyParser.urlencoded({extended:true}))
 app.get("/", (req, res) => {
-    res.send("Hello nepal123!")
+    res.send("Hello from Bookstore!")
 })
 
 // Get all books
@@ -27,6 +29,25 @@ app.get("/allBooks", (req,res) => {
 // Add new book
 app.get("/addBook", (req,res)=> {
     res.render("addBook",{})
+})
+
+app.post("/add-book", (req,res) => {
+    const title = req.body.title;
+    const author = req.body.author;
+    const price = req.body.price;
+    const image = req.body.image;
+
+    const newBook = {
+        title,
+        author,
+        price,
+        image
+    }
+
+    const addedBook = 
+
+    console.log(newBook);
+
 })
 
 
