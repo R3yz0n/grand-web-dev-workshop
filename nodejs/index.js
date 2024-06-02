@@ -1,5 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const Book = require("./models/Book");
 
 const app = express();
 app.use(express.json());
@@ -8,7 +9,7 @@ app.use(express.urlencoded({extended : true}))
 app.set("view engine", "ejs");
 
 //  Connect to mongoDBs
-const MONGODB_URI = "mongodb+srv://admin:admin@cluster0.3oldbww.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+const MONGODB_URI = "mongodb+srv://admin:admin@cluster0.3oldbww.mongodb.net/bookstore?retryWrites=true&w=majority&appName=Cluster0"
 
 mongoose.connect(MONGODB_URI).then(()=> {
     console.log("Mongodb connect vayo...");
@@ -22,8 +23,11 @@ app.get("/", (req, res) => {
 })
 
 // Get all books
-app.get("/allBooks", (req,res) => {
-    res.render("allBooks", {})
+app.get("/allBooks", async (req,res) => {
+
+    const allBooks = await Book.find({});
+
+    res.render("allBooks", {books:allBooks})
 })
 
 // Add new book
@@ -31,7 +35,7 @@ app.get("/addBook", (req,res)=> {
     res.render("addBook",{})
 })
 
-app.post("/add-book", (req,res) => {
+app.post("/add-book", async(req,res) => {
     const title = req.body.title;
     const author = req.body.author;
     const price = req.body.price;
@@ -44,10 +48,7 @@ app.post("/add-book", (req,res) => {
         image
     }
 
-    const addedBook = 
-
-    console.log(newBook);
-
+    const addedBook = await Book.create(newBook);
 })
 
 
