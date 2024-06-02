@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    
+        form{
+            font-size: 1.5rem;
+            background-color: aliceblue;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 400px;
+            align-items: center;
+            justify-content: center;
+            padding: 60px;
+            border-radius: 32px;
+        }
+
+        input{
+            font-size: 1.2rem;
+            padding: 12px 10px;
+            border-radius: 20px;
+            outline: none;
+            border: 1px solid green;
+        }
+
+        button{
+            font-size: 1.5rem;
+            border-radius: 20px;
+            padding: 12px 14px;
+            background-color: greenyellow;
+        }
+
+        button:hover{
+            background-color: green;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h1>Add new book: </h1>
+        <form action="/add-book" method="post">
+            <input type="text" name="" id="title" placeholder="Enter title">
+            <input type="text" name="" id="author" placeholder="Enter author">
+            <input type="number" name="" id="price" placeholder="Enter price">
+            <input type="text" name="" id="image" placeholder="Enter image url">
+        <button type="submit">Add New Book</button>
+        </form>
+    </center>
+</body>
+</html>
